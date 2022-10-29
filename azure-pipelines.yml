@@ -1,8 +1,10 @@
+
+
 pool:
   vmImage: ubuntu-latest
 
 steps:
-  - 
+  
 - task: Gradle@3
   inputs:
     gradleWrapperFile: 'gradlew'
@@ -11,5 +13,4 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
-    spotBugsAnalysis: true
-
+    spotBugsAnalysis: false
