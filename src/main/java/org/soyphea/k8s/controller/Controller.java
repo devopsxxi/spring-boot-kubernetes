@@ -39,13 +39,9 @@ public class Controller {
         return userService.getUser(containName);
     }
 
-    private void myPrivateMethodWithError() {
-        SecureRandom sr = new SecureRandom();
-        sr.setSeed(123456L); // Noncompliant
-        int v = sr.next(32);
-
-        sr = new SecureRandom("abcdefghijklmnop".getBytes("us-ascii")); // Noncompliant
-        v = sr.next(32);
+   private void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        URL url = new URL(req.getParameter("url"));
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection(); // Noncompliant
     }
 
 }
