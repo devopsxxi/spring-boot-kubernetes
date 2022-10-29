@@ -11,4 +11,5 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
-    spotBugsAnalysis: false
+    spotBugsAnalysis: true
+
