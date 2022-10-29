@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.security.*;
 
 @Slf4j
 @RestController
@@ -38,5 +39,13 @@ public class Controller {
         return userService.getUser(containName);
     }
 
+    private void myPrivateMethodWithError() {
+        SecureRandom sr = new SecureRandom();
+        sr.setSeed(123456L); // Noncompliant
+        int v = sr.next(32);
+
+        sr = new SecureRandom("abcdefghijklmnop".getBytes("us-ascii")); // Noncompliant
+        v = sr.next(32);
+    }
 
 }
