@@ -24,4 +24,11 @@ steps:
     organization: 'devopsxxi'
     scannerMode: 'CLI'
     configMode: 'file'
+    extraProperties: |
+     # Additional properties that will be passed to the scanner, 
+     # Put one key=value per line, example:
+     # sonar.exclusions=**/*.bin
+     sonar.organization=devopsxxi
+     sonar.projectKey=devopsxxi_spring-boot-kubernetes
+     sonar.sources=.
 - task: SonarCloudAnalyze@1
