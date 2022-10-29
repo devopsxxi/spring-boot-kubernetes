@@ -24,3 +24,12 @@ steps:
      sonar.organization=devopsxxi
      sonar.projectKey=devopsxxi_spring-boot-kubernetes
      sonar.sources=.
+
+- task: Maven@3
+  displayName: 'Maven pom.xml'
+  inputs:
+    mavenPomFile: '$(Parameters.mavenPOMFile)'
+    goals: 'clean package'
+    jdkVersionOption: 1.11
+    sonarQubeRunAnalysis: true
+    checkStyleRunAnalysis: true
