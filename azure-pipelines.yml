@@ -23,6 +23,12 @@ steps:
     projectKey: 'devopsxxi_spring-boot-kubernetes'
     projectName: 'spring-boot-kubernetes'
 
+
+- task: sonarcloud-buildbreaker@2
+  inputs:
+    SonarCloud: 'ConnectionToSonarCloud'
+    organization: 'devopsxxi'
+    
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -39,7 +45,3 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
   
-- task: sonarcloud-buildbreaker@2
-  inputs:
-    SonarCloud: 'ConnectionToSonarCloud'
-    organization: 'devopsxxi'
