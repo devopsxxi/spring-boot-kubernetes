@@ -4,7 +4,7 @@ import javax.crypto.Cipher;
 import java.security.NoSuchAlgorithmException;
 import javax.crypto.NoSuchPaddingException;
 
-public class User {
+public class MyObject {
     public void testMethod(String[] args) {
       try
       {
