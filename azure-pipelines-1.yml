@@ -16,38 +16,38 @@ steps:
 #     effectivePomSkip: false
 #     sonarQubeRunAnalysis: false
 
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'ConnectionToSonarCloud'
-    organization: 'devopsxxi'
-    projectKey: 'devopsxxi_spring-boot-kubernetes'
-    projectName: 'spring-boot-kubernetes'
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'ConnectionToSonarCloud'
+#     organization: 'devopsxxi'
+#     projectKey: 'devopsxxi_spring-boot-kubernetes'
+#     projectName: 'spring-boot-kubernetes'
 
 
-- task: sonarcloud-buildbreaker@2
-  inputs:
-    SonarCloud: 'ConnectionToSonarCloud'
-    organization: 'devopsxxi'
+# - task: sonarcloud-buildbreaker@2
+#   inputs:
+#     SonarCloud: 'ConnectionToSonarCloud'
+#     organization: 'devopsxxi'
     
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+# - task: Maven@3
+#   inputs:
+#     mavenPomFile: 'pom.xml'
+#     publishJUnitResults: true
+#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#     javaHomeOption: 'JDKVersion'
+#     mavenVersionOption: 'Default'
+#     mavenAuthenticateFeed: false
+#     effectivePomSkip: false
+#     sonarQubeRunAnalysis: true
+#     sqMavenPluginVersionChoice: 'latest'
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'  
+# - task: SonarCloudPublish@1
+#   inputs:
+#     pollingTimeoutSec: '300'  
 
-- task: dependency-check-build-task@6
-  inputs:
-    projectName: 'Dependency Check'
-    scanPath: 'target/spring-boot-kubernetes-0.0.1-SNAPSHOT.jar'
-    format: 'HTML'
-    failOnCVSS: '2'
+# - task: dependency-check-build-task@6
+#   inputs:
+#     projectName: 'Dependency Check'
+#     scanPath: 'target/spring-boot-kubernetes-0.0.1-SNAPSHOT.jar'
+#     format: 'HTML'
+#     failOnCVSS: '2'
