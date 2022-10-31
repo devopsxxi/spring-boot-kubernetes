@@ -36,8 +36,6 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         arguments: '-t spring-boot-k8s:v1 .'
-        tags: |
-          $(tag)
 
     - task: trivy@1
       inputs:
