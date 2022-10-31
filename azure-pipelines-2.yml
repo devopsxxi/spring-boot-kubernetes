@@ -44,5 +44,5 @@ stages:
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: 
-        arguments: '--tag MyImage'
+        arguments: '--tag miimage001'
 
