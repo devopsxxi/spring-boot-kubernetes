@@ -51,13 +51,10 @@ stages:
     #     version: 'latest'
     #     path: '**/*'
         
-    # - task: trivy@1
-    #   inputs:
-    #     version: 'latest'
-    #     image: 'miimage001'
-
-    - task: DockerCompose@0
+    - task: trivy@1
       inputs:
-        containerregistrytype: 'Container Registry'
-        dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run services'
+        version: 'latest'
+        image: 'miimage001'
+        aquaKey: '8XfrpuVRuXYRISOL6UGlzc'
+        aquaSecret: 'jqBt6kEpTnXMr1ZAXv9OAD1sF1l6H7pNHFW'
+
