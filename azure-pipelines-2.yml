@@ -38,15 +38,11 @@ stages:
     #     arguments: '-t spring-boot-k8s:v1 .'
 
 
+
     - task: Docker@2
-      displayName: Build an image
       inputs:
         command: 'build'
         Dockerfile: '**/Dockerfile'
-        tags: 'zzzzz'
+        tags: 
+        arguments: '--tag MyImage'
 
-
-    - task: trivy@1
-      inputs:
-        version: 'latest'
-        image: 'zzzzz'
