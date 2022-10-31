@@ -46,8 +46,12 @@ stages:
         tags: 
         arguments: '--tag miimage001'
 
+    # - task: trivy@1
+    #   inputs:
+    #     version: 'latest'
+    #     path: '**/*'
+        
     - task: trivy@1
       inputs:
         version: 'latest'
-        path: '**/*'
-        
+        image: 'miimage001'
