@@ -35,5 +35,11 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        arguments: '-t mynameimage'
         tags: |
           $(tag)
+
+    - task: trivy@1
+      inputs:
+        version: 'latest'
+        image: 'mynameimage'
