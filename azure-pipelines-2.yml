@@ -30,12 +30,20 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
+    # - task: Docker@2
+    #   displayName: Build an image
+    #   inputs:
+    #     command: build
+    #     dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+    #     arguments: '-t spring-boot-k8s:v1 .'
+
+
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
         arguments: '-t spring-boot-k8s:v1 .'
+
 
     - task: trivy@1
       inputs:
