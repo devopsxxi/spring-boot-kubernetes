@@ -49,4 +49,5 @@ stages:
     - task: trivy@1
       inputs:
         version: 'latest'
-        path: '**'
+        path: '**/*'
+        
