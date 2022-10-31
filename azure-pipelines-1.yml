@@ -44,3 +44,10 @@ steps:
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'  
+
+- task: dependency-check-build-task@6
+  inputs:
+    projectName: 'Dependency Check'
+    scanPath: 'spring-boot-kubernetes-0.0.1-SNAPSHOT.jar.'
+    format: 'HTML'
+    failOnCVSS: '2'
